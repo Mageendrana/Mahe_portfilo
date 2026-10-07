@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #444444;
+    background-color: #ffffff;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+/* Original repo cyan divider accent */
+.cyan-divider {
+  width: 70px;
+  height: 2.5px;
+  background-color: #35C2F8;
+  display: block;
+  margin: 12px auto 16px auto;
+}
+
+.cyan-divider-left {
+  width: 60px;
+  height: 2.5px;
+  background-color: #35C2F8;
+  display: block;
+  margin: 10px 0 16px 0;
+}
+
+/* Timeline central line */
+.timeline-center-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #e2e8f0;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .timeline-center-line::before {
+    left: 20px;
+  }
+}
+
+/* CAD & Engineering Grid Background */
+.cad-grid-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styling */
+@media print {
+  body {
+    background: white !important;
+    color: #111111 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
